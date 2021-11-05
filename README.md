@@ -19,7 +19,7 @@ Learning，不仅仅会记录学习方面的知识，也可能会记录电影、
 发觉自己对以前看过的资料、读过的书籍，或者过往种种，即使在Mac上备忘录上做了详尽的记录，在时间的长河中仍然会被抛弃，忘得一干二净，期望可以通过Learning这个小小的记录，可以加深自己的印象。
 
 # Life
-[2022年计划](https://github.com/HongWeiChen/Learning/blob/main/Life/2022年计划.md)
+2022年计划(https://github.com/HongWeiChen/Learning/blob/main/Life/2022年计划.md)
 
 # Swift
 
