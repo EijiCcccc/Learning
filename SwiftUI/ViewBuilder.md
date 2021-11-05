@@ -4,7 +4,7 @@ ViewBuilder 视图构建
 
 Apple官方有一个解释：
 
-Allowing those closure to provide multiple child views
+- Allowing those closure to provide multiple child views
 
 允许闭包中提供多个子视图
 
@@ -38,7 +38,7 @@ struct MainApp: App {
 
 ![](http://m.qpic.cn/psc?/V53N7OG413cvz52OliN03DvKaZ42EFAJ/TmEUgtj9EK6.7V8ajmQrEJA**rCz*ljiFBpgg0HY5fmkaAskrF3r*WS.8KGer4kPGNr7*TkQz3.XCxo2DfuNdKVwux1JWBJ.sGcgpHeDk1U!/b&bo=PgGyAgAAAAADF70!&rf=viewer_4)
 
-* 在UIKit中UIView是一个Class，而在SwiftUI中，View是一个Protocol
+- 在UIKit中UIView是一个Class，而在SwiftUI中，View是一个Protocol
 
 # 再看看ViewBuilder
 
@@ -60,9 +60,9 @@ struct MainApp: App {
 
 # ResultBuilder
 
-* @resultBuilder是一个自定义的类型（之前是叫@_functionBuilder），添加了相关语法，用以自然地、声明的方式来创建嵌套的数据，比如链表和树。使用resultBuilder的代码可以包含原始的Swift语法，比如if和for以方便掌控条件数据或者重复的数据。
+- @resultBuilder是一个自定义的类型（之前是叫@_functionBuilder），添加了相关语法，用以自然地、声明的方式来创建嵌套的数据，比如链表和树。使用resultBuilder的代码可以包含原始的Swift语法，比如if和for以方便掌控条件数据或者重复的数据。
 
-* 一个类、结构体使用@resultBuilder注解时，必须至少包含一个buildBlock方法，并且这个方法是static静态的。这个方法可以接收0个或者多个参数，在函数内部就确定了参数组成形式。
+- 一个类、结构体使用@resultBuilder注解时，必须至少包含一个buildBlock方法，并且这个方法是static静态的。这个方法可以接收0个或者多个参数，在函数内部就确定了参数组成形式。
 
 - 示例
 
@@ -127,3 +127,9 @@ public static func buildBlock<C0, C1>(_ c0: C0, _ c1: C1) -> TupleView<(C0, C1)>
 ```
 
 C0...Cn一系列方法
+
+ViewBuilder结构体有11个名为buildBlock的函数，分别从0-10个View的类型参数，因此再SwiftUI中一个接收@ViewBuilder类型参数的视图容器最多能接收10个子视图，如果不能满足需求可以通过拆分来增加子视图的个数
+
+- A custom parameter attribute that constructs views from closures.
+
+这是Apple官方文档对ViewBuilder的定义，简单来说ViewBuilder就是一个包含多个视图的闭包。
