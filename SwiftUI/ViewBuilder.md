@@ -95,3 +95,35 @@ struct MainApp: App {
 ```
 
 ![](http://m.qpic.cn/psc?/V53N7OG413cvz52OliN03DvKaZ42EFAJ/TmEUgtj9EK6.7V8ajmQrEJA**rCz*ljiFBpgg0HY5fmkaAskrF3r*WS.8KGer4kPGNr7*TkQz3.XCxo2DfuNdKVwux1JWBJ.sGcgpHeDk1U!/b&bo=PgGyAgAAAAADF70!&rf=viewer_4)
+
+# 再回到ViewBuilder
+
+在ViewBuilder中，Extension中含有许多方法
+
+```
+/// Provides support for “if” statements in multi-statement closures,
+/// producing an optional view that is visible only when the condition
+/// evaluates to `true`.
+public static func buildIf<Content>(_ content: Content?) -> Content? where Content : View
+
+/// Provides support for "if" statements in multi-statement closures,
+/// producing conditional content for the "then" branch.
+public static func buildEither<TrueContent, FalseContent>(first: TrueContent) -> _ConditionalContent<TrueContent, FalseContent> where TrueContent : View, FalseContent : View
+
+/// Provides support for "if-else" statements in multi-statement closures,
+/// producing conditional content for the "else" branch.
+public static func buildEither<TrueContent, FalseContent>(second: FalseContent) -> _ConditionalContent<TrueContent, FalseContent> where TrueContent : View, FalseContent : View
+
+/// Provides support for "if" statements with `#available()` clauses in
+/// multi-statement closures, producing conditional content for the "then"
+/// branch, i.e. the conditionally-available branch.
+public static func buildLimitedAvailability<Content>(_ content: Content) -> AnyView where Content : View
+```
+
+比较值得关心的是
+
+```
+public static func buildBlock<C0, C1>(_ c0: C0, _ c1: C1) -> TupleView<(C0, C1)> where C0 : View, C1 : View
+```
+
+C0...Cn一系列方法
