@@ -21,5 +21,6 @@ Learning，不仅仅会记录学习方面的知识，也可能会记录电影、
 - [2021总结](https://github.com/HongWeiChen/Learning/blob/main/Life/2021总结.md)
 - [2022计划](https://github.com/HongWeiChen/Learning/blob/main/Life/2022计划.md)
 
-# Swift
-- [Combine](https://github.com/HongWeiChen/Learning/blob/main/Swift/Combine.md#comebine)
+# SwiftUI
+- [Combine](https://github.com/HongWeiChen/Learning/blob/main/SwiftUI/Combine.md)
+- [State](https://github.com/HongWeiChen/Learning/blob/main/SwiftUI/State.md)
