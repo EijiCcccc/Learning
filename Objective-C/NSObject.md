@@ -1,4 +1,4 @@
-# NSObject的初始化
+# NSObject
 
 我们经常使用`[[NSObject alloc] init]`这类的方法
 
