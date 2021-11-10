@@ -1,4 +1,4 @@
-# CocoaPods
+# CDN….Response: Couldn't connect to server
 
 在运行pod install的时候提示
 ```
