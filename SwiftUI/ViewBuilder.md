@@ -12,7 +12,7 @@ Apple官方有一个解释：
 
 - 示例
 
-```
+```Swift
 struct ExampleView<Content: View>: View {
 
     @ViewBuilder var content: () -> Content
@@ -42,7 +42,7 @@ struct MainApp: App {
 
 # 再看看ViewBuilder
 
-```
+```Swift
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 @resultBuilder public struct ViewBuilder {
 
@@ -66,7 +66,7 @@ struct MainApp: App {
 
 - 示例
 
-```
+```Swift
 @resultBuilder
 struct StringBuilder {
     static func buildBlock(_ s1: String, _ s2: String) -> String {
@@ -100,7 +100,7 @@ struct MainApp: App {
 
 在ViewBuilder中，Extension中含有许多方法
 
-```
+```Swift
 /// Provides support for “if” statements in multi-statement closures,
 /// producing an optional view that is visible only when the condition
 /// evaluates to `true`.
@@ -122,7 +122,7 @@ public static func buildLimitedAvailability<Content>(_ content: Content) -> AnyV
 
 比较值得关心的是
 
-```
+```Swift
 public static func buildBlock<C0, C1>(_ c0: C0, _ c1: C1) -> TupleView<(C0, C1)> where C0 : View, C1 : View
 ```
 

@@ -4,7 +4,7 @@
 
 # Xcode
 
-```
+```Swift
 /// A property wrapper type that can read and write a value managed by SwiftUI.
 ///
 /// SwiftUI manages the storage of any property you declare as a state. When the
@@ -52,7 +52,7 @@ State实例不是值本身，只是一种阅读方式，State提供了读取和�
 
 - 如果没有带有$就在SwiftUI中使用的话，编译器会报错，并且提示'insert $'
 
-```
+```Swift
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 @frozen @propertyWrapper public struct State<Value> : DynamicProperty {
 
@@ -128,6 +128,7 @@ DynamicProperty是一个Protocol，也就是State内部，实现了update的方�
 通过网上一些文章可以了解到，State是通过struct值变化通知SwiftUI，使当前视图失效并且重新计算。
 
 - Why @state only works with structs
+
   - [知乎](https://zhuanlan.zhihu.com/p/111033422)
   - [hackingwithswift](https://www.hackingwithswift.com/books/ios-swiftui/why-state-only-works-with-structs)
 

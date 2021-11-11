@@ -4,7 +4,7 @@
 
 在NSString中
 
-```
+```Objective-C
 @"Hello" == @"Hello"
 ```
 
@@ -12,7 +12,7 @@
 
 又或者说
 
-```
+```Objective-C
 NSString *str = @"Hello"
 NSString *str2 = @"Hello"
 ```
