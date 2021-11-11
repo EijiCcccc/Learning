@@ -23,7 +23,7 @@ Learning，不仅仅会记录学习方面的知识，也可能会记录电影、
 
 # Objective-C
 - [NSObject](https://github.com/HongWeiChen/Learning/blob/main/Objective-C/NSObject.md)
-- [language\u0020type](https://github.com/HongWeiChen/Learning/blob/main/Objective-C/language\u0020type.md)
+- [language type](https://github.com/HongWeiChen/Learning/blob/main/Objective-C/language%20type.md)
 
 # SwiftUI
 - [Combine](https://github.com/HongWeiChen/Learning/blob/main/SwiftUI/Combine.md)
