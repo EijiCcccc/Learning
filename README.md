@@ -4,6 +4,7 @@
 - [Objective-C](#Objective-C)
 - [SwiftUI](#SwiftUI)
 - [React-Native](#React-Native)
+- [JavaScript](#JavaScript)
 
 # 前言
 忙忙碌碌在武汉度过了坎坷的三年，相对于在厦门的5年，在技术上有所提升，知识领域也相对广泛了不少。
@@ -31,3 +32,6 @@ Learning，不仅仅会记录学习方面的知识，也可能会记录电影、
 
 # React-Native
 - [Redux原理](https://github.com/HongWeiChen/Learning/blob/main/React-Native/Redux原理.md)
+
+# JavaScript
+- [Currying 柯里化](https://github.com/HongWeiChen/Learning/blob/main/JavaScript/Currying%20柯里化.md)
