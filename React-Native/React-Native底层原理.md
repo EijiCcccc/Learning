@@ -28,7 +28,7 @@ React-Native开发最基本的元素就是组件，React-Native与React一样，
 ## 父子组件的通信
 
 在React-Native中，父组件向子组件传递值，可以通过props的形式。在下例中，父组件通过调用子组件并赋值子组件的name为React，子组件通过this.props.name获取父组件传递的name的字符串值React。
-```
+```JavaScript
 /**
 * 章节: 03-04
 * 父子组件通信，在父组件中调用子组件
@@ -56,4 +56,94 @@ class ChildComponent extends Component {
 
 ## 子父组件的通信
 
-待续
+在开发过程中，不仅有父子之间的通信，有时还会有子组件像父组件通信传值的需求，比如当子组件某个值变更后，需要通知到父组件做相应的变更与响应，那么就会需要父子之间的通信。示例代码如下，在父组件的定义中，在调用子组件时，同样向子组件传递了一个参数，不过这个参数是一个函数，此函数用于接收后续子组件像父组件传递过来的数据，与之间父组件向子组件传递数据不太一样。
+```JavaScript
+/**
+* 章节: 03-04
+* 子父组件通信，父组件的实现
+* FilePath: /03-04/child-2-parent.js
+* @Parry
+*/
+import React, {Component} from 'react';
+import ChildComponent from './ChildComponent'
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: 'React'
+    }
+  }
+
+  //传递到子组件的参数，不过参数是一个函数。
+  handleChangeName(nickName) {
+    this.setState({name: nickName})
+  }
+
+  render() {
+    return (
+      <div>
+        <p>父组件的 name：{this.state.name}</p>
+        <ChildComponent
+          onChange={(val) => {
+          this.handleChangeName(val)
+        }}/>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+下面为子组件的定义，子组件在页面中定义了一个按钮，点击此按钮后，调用自身的一个函数handleChange，修改了自身state中的值name为nickName定义的值Parry，那么此子组件的页面上的字符串将由之前的Hello React变为Hello Parry！，同时使用了this.props.changeName，也就是父组件调用时传递过来的函数，向父组件传递了nickName的值Parry。父组件在接收到了子组件的调用后，调用了父组件自身的函数handleChangeName修改了自身state中的name为Parry，也就是子组件传递过来的Parry，所以同时，父组件页面上的值也由Hello React变成了Hello Parry。
+```JavaScript
+/**
+* 章节: 03-04
+* 子父组件通信，子组件的实现
+* FilePath: /03-04/child-2-parent.js
+* @Parry
+*/
+
+import React, {Component} from 'react'
+
+export default class ChildComponent extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      name: 'React'
+    }
+  }
+
+  handleChange() {
+    const nickName = 'Parry';
+    this.setState({name: nickName})
+    //调用父组件传递过来的函数参数，传递值到父组件去。
+    this
+      .props
+      .changeName(nickName)
+  }
+
+  render() {
+    const {name} = this.state;
+    return (
+      <div>
+        <p>Hello {name}!</p>
+        <Button
+          onPress={this
+          .handleChange
+          .bind(this)}
+          title="修改一下 name 为 Parry"/>
+      </div>
+    )
+  }
+}
+```
+
+## 多级组件之间的通信
+
+如果组件之间的父子层级非常多，需要进行组件之间的传递，这时候当然可以通过上面介绍的方法一层层的传递，但是当这种组件层级很深的时候，这样的传递不是一个太好的方法。解决方法是首先在设计App时，需要注意不能让组件之间的层级关系太深，一是为了避免组件之间的通信的冗长，还有一个原因是太深的嵌套逻辑，用户体验上也不太好，可以想象一下用户从底层一层层操作返回到最顶层时的体验。第二就是可以使用如Context对象或global等方式进行多级组件之间的通信，但是这种方式不太推荐。
+
+## 无直接关系之间的通信
+
+前面提到的都是有层级关系的组件通信方式，而如果组件之间没有层级的话，可以通过如AsyncStorage或JSON文件等方式进行无直接关系组件间的通信。当然，还可以使用EventEmitter/EventTarget/EventDispatch继承或实现接口的方式、Signals模式或Publish/Subscribe的广播形式，都可以达到无直接关系组件间的通信。这些组件间的通信方式使得组件之间的数据可以传递起来。
