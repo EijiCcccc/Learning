@@ -1,12 +1,11 @@
 # Learning
-
 - [前言](#前言)
 - [Life](#Life)
-- [SwiftUI](#SwiftUI)
 - [Objective-C](#Objective-C)
+- [SwiftUI](#SwiftUI)
+- [React-Native](#React-Native)
 
 # 前言
-
 忙忙碌碌在武汉度过了坎坷的三年，相对于在厦门的5年，在技术上有所提升，知识领域也相对广泛了不少。
 
 厦门的五年，iOS开发，主要以Objective-C为主，很少接触Swift开发，即使在Swift4出来之后，仍然没有机会有实战的经验；
@@ -22,9 +21,13 @@ Learning，不仅仅会记录学习方面的知识，也可能会记录电影、
 - [2021总结](https://github.com/HongWeiChen/Learning/blob/main/Life/2021总结.md)
 - [2022计划](https://github.com/HongWeiChen/Learning/blob/main/Life/2022计划.md)
 
+# Objective-C
+- [NSObject](https://github.com/HongWeiChen/Learning/blob/main/Objective-C/NSObject.md)
+- [language type](https://github.com/HongWeiChen/Learning/blob/main/Objective-C/language type.md)
+
 # SwiftUI
 - [Combine](https://github.com/HongWeiChen/Learning/blob/main/SwiftUI/Combine.md)
 - [State](https://github.com/HongWeiChen/Learning/blob/main/SwiftUI/State.md)
 
-# Objective-C
-- [NSObject](https://github.com/HongWeiChen/Learning/blob/main/Objective-C/NSObject.md)
+# React-Native
+- [Redux原理](https://github.com/HongWeiChen/Learning/blob/main/React-Native/Redux原理.md)
