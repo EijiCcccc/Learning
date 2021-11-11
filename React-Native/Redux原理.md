@@ -22,3 +22,58 @@ state是只读的，唯一可以改变state的方式只能通过action，action�
 使用纯函数来执行修改，为了描述action是如何改变state的，只需要编写reducer
 
 # Redux概念解析
+
+## Store
+- store就是保存数据的地方，整个应用只能有一个store
+- redux提供createStore来生成store
+```
+import {createStore} from 'redux'
+const store=createStore(fn);
+```
+## State
+state就是store里面的数据，store里可以有多个state，Redux规定一个state对应一个View，只要View相同，state就相同，反过来也一样，可以通过store.getState()来获取state
+```
+import {createStore} from 'redux'
+const store=createStore(fn);
+const state=store.getState()
+```
+
+## Action
+state的改变会导致View的变化，但是在redux中不能直接操作state，也就是说不能使用this.setState来操作，用户只能操作到View。Redux提供了一个对象来告诉Store需要改变state。Action是一个对象其中type属性是必须的，表示Action名称，其他可以根据需求自由设置。
+```
+const action={
+  type:'ADD_TODO',
+  payload:'redux原理'
+}
+```
+
+## store.dispatch()
+
+store.dispatch是唯一View发出Action的方法
+```
+store.dispatch({
+  type:'ADD_TODO',
+  payload:'redux原理'
+})
+```
+store接收一个action作为参数，将它发送给store通知store改变state。
+
+# Reducer
+
+Store收到Action后，必须给出新的state，这样View才会变化。这种state的计算过程就叫做Reducer。
+
+reducer是一个纯函数，也就是说函数的返回结果必须由参数state和action决定，而且不能产生任何副作用也不能修改state和aciton对象。
+
+```
+const reducer =(state,action)=>{
+  switch(action.type){
+    case ADD_TODO:
+        return newstate;
+    default return state
+  }
+}
+```
+
+这部分内容来自于参考文章。
+
+在文章下方有对源码的解析，但是个人对redux源码一翻查看后，发现这份解析是偏老了，有兴趣的可以去看下。有空的话我也会去对redux新的源码进行解析，未完待续。
