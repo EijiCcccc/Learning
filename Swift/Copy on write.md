@@ -29,7 +29,7 @@ The description above refers to the “copying” of strings, arrays, and dictio
 
 在Swift中采用的优化方式叫写时复制，简单的说就是，只有当一个结构体发生了写入的动作时才会有复制的行为。具体的做法就是，在结构体内部用一个引用类型来存储实际的数据，在不进行写入操作的普通传递中，都是将内部的reference引用计数+1，在进行写入操作时，对内部的reference做一次copy操作用来存储新的数据，防止和之前的reference产生意外的数据共享。
 
-在Swift中有一个方法：`isUniquelyRefrencedNonObjC`(Swift 2.2)，在Swift3中这个函数变成了：`isKnownUniquelyReferenced`，他能检查一个类的实例是不是唯一的引用，如果是，我们就不需要对构体的实例进行复制，如果不是，就说明被不同的结构体共享，这时对他进行修改就需要进行复制。
+在Swift中有一个方法：isUniquelyRefrencedNonObjC(Swift 2.2)，在Swift3中这个函数变成了：isKnownUniquelyReferenced，他能检查一个类的实例是不是唯一的引用，如果是，我们就不需要对构体的实例进行复制，如果不是，就说明被不同的结构体共享，这时对他进行修改就需要进行复制。
 
 这个函数只对Swift对象有效，如果要用在Objective-C对象上，可以对Objective对象用Swift进行一次封装。
 
