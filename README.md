@@ -34,4 +34,4 @@ Learning，不仅仅会记录学习方面的知识，也可能会记录电影、
 - [Redux原理](https://github.com/HongWeiChen/Learning/blob/main/React-Native/Redux原理.md)
 
 # JavaScript
-- [Currying 柯里化](https://github.com/HongWeiChen/Learning/blob/main/JavaScript/Currying%20柯里化.md)
+- [Currying 柯里化](https://github.com/HongWeiChen/Learning/blob/main/JavaScript/Currying.md)
