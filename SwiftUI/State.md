@@ -52,7 +52,7 @@ State实例不是值本身，只是一种阅读方式，State提供了读取和�
 
 - 如果没有带有$就在SwiftUI中使用的话，编译器会报错，并且提示'insert $'
 
-```
+``Swift
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 @frozen @propertyWrapper public struct State<Value> : DynamicProperty {
 

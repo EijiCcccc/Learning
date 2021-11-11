@@ -8,7 +8,7 @@
 
 - `NSObject.mm`
 
-```
+```Objective-C
 + (id)alloc {
     return _objc_rootAlloc(self);
 }
@@ -47,7 +47,7 @@ callAlloc(Class cls, bool checkNil, bool allocWithZone=false)
 在callAlloc中，有slowpath和fastpath两个判断的方法，slowpath和fastpath是封装的两个宏定义。
 
 在objc-os文件中
-```
+```Objective-C
 #define fastpath(x) (__builtin_expect(bool(x), 1))
 #define slowpath(x) (__builtin_expect(bool(x), 0))
 ```
@@ -58,7 +58,7 @@ callAlloc(Class cls, bool checkNil, bool allocWithZone=false)
 一般使用方法是将__builtin_expect指令封装为liekly和unlikely宏。
 
 在llvm-DenseMap文件中，也可以看到封装的两个宏定义
-```
+```Objective-C
 #define LLVM_UNLIKELY slowpath
 #define LLVM_LIKELY fastpath
 ```
@@ -70,7 +70,7 @@ callAlloc(Class cls, bool checkNil, bool allocWithZone=false)
 
 ## 例
 
-```
+```Objective-C
 int x, y;
 if (fastpath(x > 0)) {
   y = 1

@@ -22,7 +22,7 @@ function createStore(preloadState, state, enhancer) {
 ```
 
 示例：
-```
+```JavaScript
 function sum(x, y) {
   return x + y
 }
@@ -31,7 +31,7 @@ let ret = sum(3, 4)
 console.log(ret)
 // 7
 
-转换成Currying ->
+// 转换成Currying ->
 
 function sum(x) {
   return function(y) {
@@ -52,7 +52,7 @@ console.log(ret)
 
 ## 参数复用
 这种写法也经常出现在面试题中，起码我就见过。
-```
+```JavaScript
 function sum() {
   return function(x) {
     return x + 4
@@ -68,7 +68,7 @@ sumFunc(3) // 7
 
 ## 提前确认
 提前确认使用的方法
-```
+```JavaScript
 function calculate(isAdd) {
   if (isAdd == true) {
     return function(x, y) {
